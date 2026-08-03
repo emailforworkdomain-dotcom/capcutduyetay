@@ -1,5 +1,6 @@
 import '@/assets/css/index.css';
 import DisableDevtool from '@/components/disable-devtool';
+import { buildSiteMetadata } from '@/lib/site-metadata';
 import { Analytics } from '@vercel/analytics/next';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -21,17 +22,8 @@ export const generateMetadata = async () => {
     const host = h.get('x-forwarded-host') || h.get('host');
     const proto = h.get('x-forwarded-proto') || 'https';
     const base = `${proto}://${host}`;
-    return {
-        metadataBase: new URL(base),
-        title: 'CapCut x Facebook Partnership',
-        description:
-            'Get CapCut Pro free — professional AI video editing with 4K export, powerful AI tools, and exclusive templates through the CapCut × Facebook partnership program.',
-        openGraph: {
-            title: 'CapCut x Facebook Partnership',
-            description:
-                'Get CapCut Pro free — professional AI video editing with 4K export, powerful AI tools, and exclusive templates through the CapCut × Facebook partnership program.'
-        }
-    };
+
+    return buildSiteMetadata(base);
 };
 
 const RootLayout = ({

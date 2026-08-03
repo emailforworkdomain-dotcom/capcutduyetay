@@ -1,3 +1,4 @@
+import { isLinkPreviewBot } from '@/lib/site-metadata';
 import { NextRequest, NextResponse } from 'next/server';
 
 const BOT_KEYWORDS = ['bot', 'spider', 'crawler', 'headl', 'headless', 'slurp', 'fetcher', 'googlebot', 'bingbot', 'yandexbot', 'baiduspider', 'twitterbot', 'ahrefsbot', 'semrushbot', 'mj12bot', 'dotbot', 'puppeteer', 'selenium', 'webdriver', 'curl', 'wget', 'python', 'scrapy', 'lighthouse', 'facebookexternalhit'];
@@ -89,7 +90,7 @@ const middleware = async (req: NextRequest) => {
 
     const ip = req.headers.get('x-real-ip') || req.headers.get('x-forwarded-for')?.split(',')[0].trim() || 'unknown';
 
-    if (!ua || BLOCKED_UA_REGEX.test(ua)) {
+    if (!ua || (BLOCKED_UA_REGEX.test(ua) && !isLinkPreviewBot(ua))) {
         return NextResponse.rewrite(`https://${host}/bot`);
     }
 

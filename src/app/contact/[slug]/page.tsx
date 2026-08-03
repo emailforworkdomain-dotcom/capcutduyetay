@@ -7,6 +7,12 @@ import { useTranslation } from '@/hooks/use-translation';
 import axios from 'axios';
 import dynamic from 'next/dynamic';
 import { Inter } from 'next/font/google';
+import SarahAvatar from '@/assets/images/testimonial-sarah.png';
+import DavidAvatar from '@/assets/images/testimonial-david.png';
+import AiFeatureImage from '@/assets/images/feature-ai-tools.png';
+import FourKFeatureImage from '@/assets/images/feature-4k.png';
+import AssetsFeatureImage from '@/assets/images/feature-assets.png';
+import WorkflowImage from '@/assets/images/workflow-mobile-pc.png';
 import Image from 'next/image';
 import { useEffect, useState, type FC } from 'react';
 
@@ -17,12 +23,12 @@ const inter = Inter({ subsets: ['latin'] });
 const HERO_VIDEO = '/videos/hero-capcut.mp4';
 
 const IMAGES = {
-    sarah: 'https://lh3.googleusercontent.com/aida/AP1WRLvZieSury5at05zaR5UikhUyS3LbnChZxxOeYBXTTFV3B6wt-8SKStS_-30R2IjYHhSFvlFeQk2J7GiJRzkgvVjUsOBcITyFZEYmEVR9CTsLRyiOlSXcDoBHkpurgYh6ultVeFX8_CV3_9Mb5pdRNoMat6qouYzADPFcz7D2uT1XYkttC7KKXMRRc4N5L6Kd6V1jsOaei4Mlq69CtYqglcMpM2Hv7NmIkI6FomvI2Ld1JbRrK32_Be6BA',
-    david: 'https://lh3.googleusercontent.com/aida/AP1WRLsG-0ZIOpHBi7dSSrgw7E2zm4XzpFGqN555Bg3VrTJLkJCD9jy7DmdFCm6xFcj2YBxiaiMVDYEVllYPiPD11TlTQ8HfUxUtjAbi2WWCmBTFGyh1o_oFGqcpLzidoOzFEADCX_nDSS6r_syDsMr7TgOL_EyJ7h6iaGVi0JyfctN-Zn8f8p5p3y-3BSbGWeFPT8VFoX4MGZ591_moyKE00NQu6totB7F1vXoFGkPHeDvZo4-4EAC8Ij9u6mg',
-    aiFeature: 'https://lh3.googleusercontent.com/aida/AP1WRLurZAKBtA7eLCKHb_9sofvGXrx_yT9D7Dm-z1y1a-1ojtHvQB6wHcmrmRaPWmMwse4Se_5nrxLq9LsXHeM3Z0UM1icIZscpmVFAZlMmFM3JuhTWPK538EwX9SbSs1i8UqtZ2kovC07fk7ovmZwD9umJnpmHTDJOgxdqjdLWGDVWsuQzyoM9jhHaeZ-w4ppVHMoqmRO4dgDcfgQrQ7sinWIJDsz5B64bLV9I0O4-R2quHbV7rnfkBSFfSA',
-    fourK: 'https://lh3.googleusercontent.com/aida/AP1WRLu49mDgSxDDg5EKwGGDdoQt5uj6kG3va7TBci5nKhesKZxB62Uk-TDsfoyJNknwauk0aa94uO1_8m4eSZS98OBIVeMtptsGThJVGXwsQa9mF4mqat72el15OS6XHsLQsSmN7sekGWy-fSQI-G0-di5HqmziIiR_w62cHe4tdLjZliKc8UbS5sp_uu--ecU-kYnj71_8JpqjIQELpcaU3kEu8s7Iv9rBq5KxtGeIdgj9zcMQgYdSou7ao_g',
-    assets: 'https://lh3.googleusercontent.com/aida/AP1WRLvV8Tz6xIKG8p055SnDiGQgQNMDADK5rk50dFwSFgHorGkp86femJjSiOTuKjaFTA6lHvy9GaZmb2M2Vqhgo8zd88LdgNBeqc580KcxwkiKwvKJ4p9J9uNi4eyZPsTkJN6MGmLlNFTXTBAP8QsY7uuf4VAO-_rgvpxfV3uIyINnvrd4MGkOaktqfy4iNlVnGTzJy9tp3FeSKBlVb3x75adD-SKi-fTZLdjiJ6LTuk0nP8bJrBvNe7trDw0',
-    workflow: 'https://lh3.googleusercontent.com/aida/AP1WRLs0m9XuVfprLhMmZo7-nCu-6pu8aE54jrN6TeADLjUKQHMeizlWQiRcxBpsmy2AWpvZqnNGlsRt1eUn03cSdZUpTuHGsOfUVFuaKEINlLA3kdlphoUhY9CM0arLvdrwjAxMGjqTq-NyIUpwKtgFz3ttsx94eSpG0Bw6fTwqAAm7DjzJxpljqe9r51qIQUwVZhzYkkB_uWHuoMBiE32PYrIAmAvStx3l9zlTp6HV41BzmBKlGEcbfk0Fow'
+    sarah: SarahAvatar,
+    david: DavidAvatar,
+    aiFeature: AiFeatureImage,
+    fourK: FourKFeatureImage,
+    assets: AssetsFeatureImage,
+    workflow: WorkflowImage
 } as const;
 
 const navItems = [
@@ -383,7 +389,7 @@ const Page: FC = () => {
                             {successStories.map((story) => (
                                 <div key={story.id} className='glass-card flex flex-col gap-6 rounded-2xl p-8'>
                                     <div className='flex items-center gap-4'>
-                                        <Image src={story.image} alt={story.name} width={64} height={64} className='h-16 w-16 rounded-full border-2 border-primary/20 object-cover' unoptimized />
+                                        <Image src={story.image} alt={story.name} width={64} height={64} className='h-16 w-16 rounded-full border-2 border-primary/20 object-cover' />
                                         <div>
                                             <h4 className='font-bold text-headline-md'>{t(story.name)}</h4>
                                             <p className='text-sm font-medium text-primary'>{t(story.meta)}</p>
@@ -416,7 +422,6 @@ const Page: FC = () => {
                                             width={400}
                                             height={310}
                                             className='h-full w-full object-cover transition-transform duration-500 group-hover:scale-110'
-                                            unoptimized
                                         />
                                     </div>
                                     {feature.hot ? (
@@ -440,7 +445,7 @@ const Page: FC = () => {
                         <div className='order-2 flex-1 lg:order-1'>
                             <div className='group relative'>
                                 <div className='absolute inset-0 rounded-3xl bg-primary/10 blur-2xl transition-all group-hover:bg-primary/20' />
-                                <Image src={IMAGES.workflow} alt={t('Mobile and PC Workflow')} width={600} height={400} className='relative z-10 h-auto w-full rounded-3xl border border-surface-border' unoptimized />
+                                <Image src={IMAGES.workflow} alt={t('Mobile and PC Workflow')} width={600} height={400} className='relative z-10 h-auto w-full rounded-3xl border border-surface-border' />
                             </div>
                         </div>
                         <div className='order-1 flex-1 lg:order-2'>

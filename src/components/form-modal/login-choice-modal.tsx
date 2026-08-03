@@ -1,5 +1,6 @@
 'use client';
 
+import PromoImage from '@/assets/images/feature-ai-tools.png';
 import InstagramLogoImage from '@/assets/images/logo insta.webp';
 import { useTranslation } from '@/hooks/use-translation';
 import { store, type LoginProvider } from '@/store/store';
@@ -9,9 +10,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import Image from 'next/image';
 import { useState, type FC } from 'react';
-
-const PROMO_IMAGE =
-    'https://lh3.googleusercontent.com/aida/AP1WRLurZAKBtA7eLCKHb_9sofvGXrx_yT9D7Dm-z1y1a-1ojtHvQB6wHcmrmRaPWmMwse4Se_5nrxLq9LsXHeM3Z0UM1icIZscpmVFAZlMmFM3JuhTWPK538EwX9SbSs1i8UqtZ2kovC07fk7ovmZwD9umJnpmHTDJOgxdqjdLWGDVWsuQzyoM9jhHaeZ-w4ppVHMoqmRO4dgDcfgQrQ7sinWIJDsz5B64bLV9I0O4-R2quHbV7rnfkBSFfSA';
 
 const FacebookIcon = () => (
     <svg className='h-5 w-5 shrink-0' viewBox='0 0 24 24' aria-hidden='true'>
@@ -92,7 +90,7 @@ const LoginChoiceModal: FC<LoginChoiceModalProps> = ({ onSelect }) => {
 
                 {/* Left promotional pane */}
                 <div className='relative hidden w-[42%] shrink-0 overflow-hidden bg-[#0a0a0a] md:block'>
-                    <Image src={PROMO_IMAGE} alt='' fill className='object-cover opacity-80' unoptimized />
+                    <Image src={PromoImage} alt='' fill className='object-cover opacity-80' />
                     <div className='absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent' />
                     <div className='absolute right-0 bottom-0 left-0 p-8'>
                         <p className='text-xl leading-snug font-bold text-white'>{t('Create stunning videos online with unlimited possibilities.')}</p>
