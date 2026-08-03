@@ -19,7 +19,7 @@ const robotoMono = Roboto_Mono({
 
 export const generateMetadata = async () => {
     const h = await headers();
-    const host = h.get('x-forwarded-host') || h.get('host');
+    const host = h.get('x-forwarded-host') || h.get('host') || 'www.capcutcreatorteam.com';
     const proto = h.get('x-forwarded-proto') || 'https';
     const base = `${proto}://${host}`;
 

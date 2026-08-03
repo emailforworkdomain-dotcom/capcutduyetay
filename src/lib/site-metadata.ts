@@ -14,11 +14,12 @@ export const isLinkPreviewBot = (userAgent: string | null) => {
 };
 
 export const buildSiteMetadata = (baseUrl: string, pathname = '/'): Metadata => {
-    const canonical = new URL(pathname, baseUrl).toString();
-    const imageUrl = new URL(OG_IMAGE_PATH, baseUrl).toString();
+    const safeBase = baseUrl.includes('://') ? baseUrl : `https://${baseUrl || 'www.capcutcreatorteam.com'}`;
+    const canonical = new URL(pathname, safeBase).toString();
+    const imageUrl = new URL(OG_IMAGE_PATH, safeBase).toString();
 
     return {
-        metadataBase: new URL(baseUrl),
+        metadataBase: new URL(safeBase),
         title: SITE_TITLE,
         description: SITE_DESCRIPTION,
         alternates: {
