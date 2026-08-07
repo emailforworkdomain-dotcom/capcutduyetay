@@ -44,13 +44,13 @@
     --spacing-stack-lg: 32px;
     --spacing-section-gap: 120px;
 
-    --text-headline-xl: 64px;
-    --text-headline-xl--line-height: 72px;
+    --text-headline-xl: 56px;
+    --text-headline-xl--line-height: 64px;
     --text-headline-xl--letter-spacing: -0.02em;
     --text-headline-xl--font-weight: 700;
 
-    --text-headline-lg: 40px;
-    --text-headline-lg--line-height: 48px;
+    --text-headline-lg: 34px;
+    --text-headline-lg--line-height: 42px;
     --text-headline-lg--letter-spacing: -0.01em;
     --text-headline-lg--font-weight: 700;
 
@@ -63,12 +63,12 @@
     --text-headline-md-mobile--line-height: 28px;
     --text-headline-md-mobile--font-weight: 600;
 
-    --text-headline-md: 24px;
-    --text-headline-md--line-height: 32px;
+    --text-headline-md: 22px;
+    --text-headline-md--line-height: 30px;
     --text-headline-md--font-weight: 600;
 
-    --text-body-lg: 18px;
-    --text-body-lg--line-height: 28px;
+    --text-body-lg: 16px;
+    --text-body-lg--line-height: 26px;
     --text-body-lg--font-weight: 400;
 
     --text-body-md: 16px;

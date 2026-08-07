@@ -311,7 +311,7 @@ const Page: FC = () => {
                                 <h1 className='mb-4 font-headline-lg-mobile text-headline-lg-mobile leading-tight md:text-headline-lg lg:text-headline-xl'>
                                     {t('Get CapCut Pro Free — Professional AI Video Editing')}
                                 </h1>
-                                <p className='mb-6 text-lg font-bold text-primary-container md:text-xl'>{t('Unlock unlimited Pro features')}</p>
+                                <p className='mb-6 text-lg font-bold text-primary-container'>{t('Unlock unlimited Pro features')}</p>
                                 <p className='mb-8 max-w-xl text-base text-on-surface-variant md:mb-10 md:font-body-lg md:text-body-lg'>
                                     {t('Get the full professional AI video editing toolkit at no cost. Export 4K without watermarks, use powerful AI tools, and access exclusive templates — all for free.')}
                                 </p>
@@ -355,7 +355,7 @@ const Page: FC = () => {
                     <div className='mx-auto grid max-w-container-max grid-cols-1 gap-gutter md:grid-cols-3'>
                         {statsItems.map((stat) => (
                             <div key={stat.label} className='glass-card group flex flex-col items-center rounded-2xl p-8 text-center transition-colors hover:border-primary/50'>
-                                <span className='mb-2 text-3xl font-bold text-primary md:text-4xl'>{stat.value}</span>
+                                <span className='mb-2 text-3xl font-bold text-primary'>{stat.value}</span>
                                 <span className='font-medium text-on-surface-variant'>{t(stat.label)}</span>
                             </div>
                         ))}
@@ -376,7 +376,7 @@ const Page: FC = () => {
                             className='flex w-full items-center justify-center gap-4 rounded-xl bg-fb-blue px-8 py-5 font-bold text-white shadow-xl transition-all hover:scale-[1.02] hover:bg-fb-blue/90'
                         >
                             <PartnershipLogoStack size='md' />
-                            <span className='text-base md:text-xl'>{t('Apply for Partnership: CapCut x Facebook Monetization')}</span>
+                            <span className='text-base md:text-lg'>{t('Apply for Partnership: CapCut x Facebook Monetization')}</span>
                         </button>
                     </div>
                 </section>
