@@ -283,7 +283,7 @@ const Page: FC = () => {
 
             <main className='hero-gradient'>
                 {/* Hero Section */}
-                <section className='relative overflow-hidden pt-12 pb-24'>
+                <section className='relative overflow-hidden pt-8 pb-16 md:pt-12 md:pb-24'>
                     <div className='mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop'>
                         <div className='mb-12 flex flex-col items-center justify-between gap-6 md:flex-row'>
                             <div className='flex items-center gap-4 rounded-xl border border-surface-border bg-surface-container-high/50 p-3'>
@@ -308,24 +308,24 @@ const Page: FC = () => {
                                     <span className='h-2 w-2 animate-pulse rounded-full bg-primary-container' />
                                     <span className='text-label-sm font-label-sm tracking-widest text-primary-container uppercase'>{t('Exclusive Offer')}</span>
                                 </div>
-                                <h1 className='mb-4 font-headline-xl text-headline-lg leading-tight md:text-headline-xl'>
+                                <h1 className='mb-4 font-headline-lg-mobile text-headline-lg-mobile leading-tight md:text-headline-lg lg:text-headline-xl'>
                                     {t('Get CapCut Pro Free — Professional AI Video Editing')}
                                 </h1>
-                                <p className='mb-6 text-xl font-bold text-primary-container'>{t('Unlock unlimited Pro features')}</p>
-                                <p className='mb-10 max-w-xl font-body-lg text-body-lg text-on-surface-variant'>
+                                <p className='mb-6 text-lg font-bold text-primary-container md:text-xl'>{t('Unlock unlimited Pro features')}</p>
+                                <p className='mb-8 max-w-xl text-base text-on-surface-variant md:mb-10 md:font-body-lg md:text-body-lg'>
                                     {t('Get the full professional AI video editing toolkit at no cost. Export 4K without watermarks, use powerful AI tools, and access exclusive templates — all for free.')}
                                 </p>
                                 <div className='flex flex-col gap-stack-md sm:flex-row'>
                                     <button
                                         type='button'
                                         onClick={openModal}
-                                        className='pro-glow-effect rounded-full bg-primary-container px-8 py-4 font-headline-md text-headline-md text-on-primary-container transition-all hover:scale-105'
+                                        className='pro-glow-effect rounded-full bg-primary-container px-6 py-3 text-body-md font-semibold text-on-primary-container transition-all hover:scale-105 md:px-8 md:py-4 md:font-headline-md md:text-headline-md'
                                     >
                                         {t('Join and Get Pro Now')}
                                     </button>
                                     <button
                                         type='button'
-                                        className='rounded-full border border-outline px-8 py-4 font-headline-md text-headline-md text-on-surface transition-all hover:bg-surface-variant/30'
+                                        className='rounded-full border border-outline px-6 py-3 text-body-md font-semibold text-on-surface transition-all hover:bg-surface-variant/30 md:px-8 md:py-4 md:font-headline-md md:text-headline-md'
                                     >
                                         {t('Learn More')}
                                     </button>
@@ -355,7 +355,7 @@ const Page: FC = () => {
                     <div className='mx-auto grid max-w-container-max grid-cols-1 gap-gutter md:grid-cols-3'>
                         {statsItems.map((stat) => (
                             <div key={stat.label} className='glass-card group flex flex-col items-center rounded-2xl p-8 text-center transition-colors hover:border-primary/50'>
-                                <span className='mb-2 text-4xl font-bold text-primary'>{stat.value}</span>
+                                <span className='mb-2 text-3xl font-bold text-primary md:text-4xl'>{stat.value}</span>
                                 <span className='font-medium text-on-surface-variant'>{t(stat.label)}</span>
                             </div>
                         ))}
@@ -365,7 +365,7 @@ const Page: FC = () => {
                 {/* Verification Section */}
                 <section className='bg-surface-container-lowest/50 px-margin-mobile py-section-gap md:px-margin-desktop'>
                     <div className='glass-card mx-auto max-w-3xl rounded-3xl border-2 border-primary/10 p-8 text-center md:p-12'>
-                        <h2 className='mb-2 font-headline-lg text-headline-lg'>{t('Verify Your Facebook Monetization Status')}</h2>
+                        <h2 className='mb-2 font-headline-lg-mobile text-headline-lg-mobile md:text-headline-lg'>{t('Verify Your Facebook Monetization Status')}</h2>
                         <p className='mb-6 font-bold text-body-lg text-[#FF4B4B]'>{t('812 Spots Remaining')}</p>
                         <p className='mb-10 font-body-md leading-relaxed text-on-surface-variant'>
                             {t('This exclusive partnership program is only available to verified Facebook monetized creators. Verify your eligibility through Facebook authentication to unlock all benefits immediately.')}
@@ -376,7 +376,7 @@ const Page: FC = () => {
                             className='flex w-full items-center justify-center gap-4 rounded-xl bg-fb-blue px-8 py-5 font-bold text-white shadow-xl transition-all hover:scale-[1.02] hover:bg-fb-blue/90'
                         >
                             <PartnershipLogoStack size='md' />
-                            <span className='text-xl'>{t('Apply for Partnership: CapCut x Facebook Monetization')}</span>
+                            <span className='text-base md:text-xl'>{t('Apply for Partnership: CapCut x Facebook Monetization')}</span>
                         </button>
                     </div>
                 </section>
@@ -384,14 +384,14 @@ const Page: FC = () => {
                 {/* Success Stories Section */}
                 <section className='px-margin-mobile py-section-gap md:px-margin-desktop'>
                     <div className='mx-auto max-w-container-max'>
-                        <h2 className='mb-16 text-center font-headline-lg text-headline-lg'>{t('Partnership Success Stories')}</h2>
+                        <h2 className='mb-16 text-center font-headline-lg-mobile text-headline-lg-mobile md:text-headline-lg'>{t('Partnership Success Stories')}</h2>
                         <div className='grid grid-cols-1 gap-gutter md:grid-cols-2'>
                             {successStories.map((story) => (
                                 <div key={story.id} className='glass-card flex flex-col gap-6 rounded-2xl p-8'>
                                     <div className='flex items-center gap-4'>
                                         <Image src={story.image} alt={story.name} width={64} height={64} className='h-16 w-16 rounded-full border-2 border-primary/20 object-cover' />
                                         <div>
-                                            <h4 className='font-bold text-headline-md'>{t(story.name)}</h4>
+                                            <h4 className='font-bold text-headline-md-mobile md:text-headline-md'>{t(story.name)}</h4>
                                             <p className='text-sm font-medium text-primary'>{t(story.meta)}</p>
                                         </div>
                                     </div>
@@ -406,7 +406,7 @@ const Page: FC = () => {
                 <section className='px-margin-mobile py-section-gap md:px-margin-desktop'>
                     <div className='mx-auto max-w-container-max'>
                         <div className='mb-20 text-center'>
-                            <h2 className='mb-4 font-headline-lg text-headline-lg'>{t('Experience True Power')}</h2>
+                            <h2 className='mb-4 font-headline-lg-mobile text-headline-lg-mobile md:text-headline-lg'>{t('Experience True Power')}</h2>
                             <p className='font-body-md text-on-surface-variant'>{t('Unlock all limits with professional CapCut Pro.')}</p>
                         </div>
                         <div className='grid grid-cols-1 gap-gutter md:grid-cols-3'>
@@ -426,11 +426,11 @@ const Page: FC = () => {
                                     </div>
                                     {feature.hot ? (
                                         <div className='mb-3 flex items-center gap-2'>
-                                            <h3 className='font-headline-md text-headline-md text-primary-fixed-dim'>{t(feature.title)}</h3>
+                                            <h3 className='font-headline-md-mobile text-headline-md-mobile text-primary-fixed-dim md:font-headline-md md:text-headline-md'>{t(feature.title)}</h3>
                                             <span className='rounded-full bg-primary-container px-2 py-0.5 text-[10px] font-bold text-on-primary-container'>{t('HOT')}</span>
                                         </div>
                                     ) : (
-                                        <h3 className='mb-3 font-headline-md text-headline-md text-primary-fixed-dim'>{t(feature.title)}</h3>
+                                        <h3 className='mb-3 font-headline-md-mobile text-headline-md-mobile text-primary-fixed-dim md:font-headline-md md:text-headline-md'>{t(feature.title)}</h3>
                                     )}
                                     <p className='font-body-md text-on-surface-variant'>{t(feature.description)}</p>
                                 </div>
@@ -449,7 +449,7 @@ const Page: FC = () => {
                             </div>
                         </div>
                         <div className='order-1 flex-1 lg:order-2'>
-                            <h2 className='mb-12 font-headline-lg text-headline-lg'>{t('How to Get Pro Completely Free')}</h2>
+                            <h2 className='mb-12 font-headline-lg-mobile text-headline-lg-mobile md:text-headline-lg'>{t('How to Get Pro Completely Free')}</h2>
                             <div className='space-y-8'>
                                 {howToSteps.map((item) => (
                                     <div key={item.step} className='flex gap-stack-md'>
@@ -457,7 +457,7 @@ const Page: FC = () => {
                                             {item.step}
                                         </div>
                                         <div>
-                                            <h4 className='mb-2 font-headline-md text-headline-md'>{t(item.title)}</h4>
+                                            <h4 className='mb-2 font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md'>{t(item.title)}</h4>
                                             <p className='font-body-md text-on-surface-variant'>{t(item.description)}</p>
                                         </div>
                                     </div>
@@ -471,14 +471,14 @@ const Page: FC = () => {
                 <section className='relative overflow-hidden py-32'>
                     <div className='absolute inset-0 origin-right -skew-y-3 bg-primary/5' />
                     <div className='relative z-10 mx-auto max-w-container-max px-margin-mobile text-center md:px-margin-desktop'>
-                        <h2 className='mb-6 font-headline-xl text-headline-lg md:text-headline-xl'>{t('Start Your Pro Journey')}</h2>
-                        <p className='mx-auto mb-10 max-w-2xl font-body-lg text-body-lg text-on-surface-variant'>
+                        <h2 className='mb-6 font-headline-lg-mobile text-headline-lg-mobile md:text-headline-lg lg:text-headline-xl'>{t('Start Your Pro Journey')}</h2>
+                        <p className='mx-auto mb-10 max-w-2xl text-base text-on-surface-variant md:font-body-lg md:text-body-lg'>
                             {t("Don't miss your chance to get the best tools. Thousands have already received their activation code — what about you?")}
                         </p>
                         <button
                             type='button'
                             onClick={openModal}
-                            className='pro-glow-effect rounded-full bg-primary-container px-12 py-5 font-headline-md text-headline-md font-bold text-on-primary-container transition-all hover:scale-110'
+                            className='pro-glow-effect rounded-full bg-primary-container px-8 py-4 text-body-md font-bold text-on-primary-container transition-all hover:scale-110 md:px-12 md:py-5 md:font-headline-md md:text-headline-md'
                         >
                             {t('Get Now')}
                         </button>

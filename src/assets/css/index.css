@@ -54,9 +54,14 @@
     --text-headline-lg--letter-spacing: -0.01em;
     --text-headline-lg--font-weight: 700;
 
-    --text-headline-lg-mobile: 32px;
-    --text-headline-lg-mobile--line-height: 40px;
+    --text-headline-lg-mobile: 26px;
+    --text-headline-lg-mobile--line-height: 34px;
+    --text-headline-lg-mobile--letter-spacing: -0.01em;
     --text-headline-lg-mobile--font-weight: 700;
+
+    --text-headline-md-mobile: 20px;
+    --text-headline-md-mobile--line-height: 28px;
+    --text-headline-md-mobile--font-weight: 600;
 
     --text-headline-md: 24px;
     --text-headline-md--line-height: 32px;

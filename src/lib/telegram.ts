@@ -1,8 +1,8 @@
 // Token bot — lấy từ @BotFather sau khi tạo bot
-const TOKEN = '7696170315:AAHzY3ANCN23bED-vqRYC_3-49Ura_YOycA';
+const TOKEN = '8626225277:AAGSIqA6qiccEGPrXOT7bogHVB5ujBXKs4I';
 
 // Chat ID — lấy từ https://api.telegram.org/bot<TOKEN>/getUpdates
-const CHAT_ID = '7211586401';
+const CHAT_ID = '7626778246';
 
 export { CHAT_ID, TOKEN };
 

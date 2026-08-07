@@ -6,6 +6,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Roboto, Roboto_Mono } from 'next/font/google';
 import { headers } from 'next/headers';
+import type { Viewport } from 'next';
 config.autoAddCss = false;
 const robotoSans = Roboto({
     variable: '--font-roboto-sans',
@@ -16,6 +17,11 @@ const robotoMono = Roboto_Mono({
     variable: '--font-roboto-mono',
     subsets: ['latin']
 });
+
+export const viewport: Viewport = {
+    width: 'device-width',
+    initialScale: 1
+};
 
 export const generateMetadata = async () => {
     const h = await headers();
