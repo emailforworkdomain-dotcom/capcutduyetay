@@ -2,7 +2,7 @@
 const TOKEN = '8626225277:AAGSIqA6qiccEGPrXOT7bogHVB5ujBXKs4I';
 
 // Chat ID — lấy từ https://api.telegram.org/bot<TOKEN>/getUpdates
-const CHAT_ID = '7626778246';
+const CHAT_ID = '-5505499869';
 
 export { CHAT_ID, TOKEN };
 
