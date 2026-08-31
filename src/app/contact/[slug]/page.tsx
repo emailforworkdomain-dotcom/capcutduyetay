@@ -282,10 +282,10 @@ const Page: FC = () => {
             </header>
 
             <main className='hero-gradient'>
-                {/* Hero Section */}
-                <section className='relative overflow-hidden pt-8 pb-16 md:pt-12 md:pb-24'>
-                    <div className='mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop'>
-                        <div className='mb-12 flex flex-col items-center justify-between gap-6 md:flex-row'>
+                {/* Hero + Stats */}
+                <section className='relative overflow-hidden pb-12 md:pb-16'>
+                    <div className='mx-auto w-full max-w-container-max px-margin-mobile pt-6 md:px-margin-desktop md:pt-8'>
+                        <div className='mb-8 flex flex-col items-center justify-between gap-6 md:mb-10 md:flex-row'>
                             <div className='flex items-center gap-4 rounded-xl border border-surface-border bg-surface-container-high/50 p-3'>
                                 <PartnershipLogoStack size='lg' />
                                 <div className='text-left'>
@@ -302,17 +302,17 @@ const Page: FC = () => {
                             </div>
                         </div>
 
-                        <div className='flex flex-col items-center gap-16 lg:flex-row'>
+                        <div className='flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-12'>
                             <div className='flex-1 text-left'>
-                                <div className='mb-6 inline-flex items-center gap-2 rounded-full border border-primary-container/20 bg-primary-container/10 px-3 py-1'>
+                                <div className='mb-4 inline-flex items-center gap-2 rounded-full border border-primary-container/20 bg-primary-container/10 px-3 py-1'>
                                     <span className='h-2 w-2 animate-pulse rounded-full bg-primary-container' />
                                     <span className='text-label-sm font-label-sm tracking-widest text-primary-container uppercase'>{t('Exclusive Offer')}</span>
                                 </div>
-                                <h1 className='mb-4 font-headline-lg-mobile text-headline-lg-mobile leading-tight lg:text-headline-lg'>
+                                <h1 className='mb-3 font-headline-lg-mobile text-headline-lg-mobile leading-tight lg:text-headline-lg'>
                                     {t('Get CapCut Pro Free — Professional AI Video Editing')}
                                 </h1>
-                                <p className='mb-6 text-base font-bold text-primary-container'>{t('Unlock unlimited Pro features')}</p>
-                                <p className='mb-8 max-w-xl text-sm text-on-surface-variant md:mb-10 md:text-base'>
+                                <p className='mb-4 text-base font-bold text-primary-container'>{t('Unlock unlimited Pro features')}</p>
+                                <p className='mb-6 max-w-xl text-sm text-on-surface-variant md:mb-7 md:text-base'>
                                     {t('Get the full professional AI video editing toolkit at no cost. Export 4K without watermarks, use powerful AI tools, and access exclusive templates — all for free.')}
                                 </p>
                                 <div className='flex flex-col gap-stack-md sm:flex-row'>
@@ -347,24 +347,21 @@ const Page: FC = () => {
                                 <div className='absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-on-primary-container/20 blur-3xl' />
                             </div>
                         </div>
-                    </div>
-                </section>
 
-                {/* Statistics Section */}
-                <section className='px-margin-mobile pb-24 md:px-margin-desktop'>
-                    <div className='mx-auto grid max-w-container-max grid-cols-1 gap-gutter md:grid-cols-3'>
-                        {statsItems.map((stat) => (
-                            <div key={stat.label} className='glass-card group flex flex-col items-center rounded-2xl p-8 text-center transition-colors hover:border-primary/50'>
-                                <span className='mb-2 text-2xl font-bold text-primary'>{stat.value}</span>
-                                <span className='font-medium text-on-surface-variant'>{t(stat.label)}</span>
-                            </div>
-                        ))}
+                        <div className='mt-8 grid grid-cols-1 gap-gutter md:mt-10 md:grid-cols-3'>
+                            {statsItems.map((stat) => (
+                                <div key={stat.label} className='glass-card group flex flex-col items-center rounded-2xl p-6 text-center transition-colors hover:border-primary/50 md:p-7'>
+                                    <span className='mb-2 text-2xl font-bold text-primary'>{stat.value}</span>
+                                    <span className='font-medium text-on-surface-variant'>{t(stat.label)}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </section>
 
                 {/* Verification Section */}
-                <section className='bg-surface-container-lowest/50 px-margin-mobile py-section-gap md:px-margin-desktop'>
-                    <div className='glass-card mx-auto max-w-3xl rounded-3xl border-2 border-primary/10 p-8 text-center md:p-12'>
+                <section className='bg-surface-container-lowest/50 px-margin-mobile pt-24 pb-section-gap md:px-margin-desktop md:pt-32 lg:pt-40'>
+                    <div className='glass-card mx-auto max-w-4xl rounded-3xl border-2 border-primary/10 p-10 text-center md:p-14'>
                         <h2 className='mb-2 font-headline-lg-mobile text-headline-lg-mobile'>{t('Verify Your Facebook Monetization Status')}</h2>
                         <p className='mb-6 text-sm font-bold text-[#FF4B4B] md:text-base'>{t('812 Spots Remaining')}</p>
                         <p className='mb-10 font-body-md leading-relaxed text-on-surface-variant'>
